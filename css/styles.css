@@ -7,7 +7,7 @@
     --moderate-cyan: hsl(170, 45%, 43%);
     /* Neutral */
     --white: hsl(0, 0%, 100%);
-    --light-grayish-blue: hsl(240, 75%, 98%);
+    --light-grayish-blue: #f8f8fe;
     --light-gray: hsl(0, 0%, 75%);
     /* Fuentes */
     --fuentes-titulos: 'Raleway', sans-serif;
@@ -20,9 +20,8 @@
 body {
     font-family: var(--fuentes-cuerpo);
     background: url("../images/bg-curve-mobile.svg"), 
-                linear-gradient(to bottom, var(--white), 
-                                            var(--white) 40%, 
-                                            var(--light-grayish-blue) 40%);
+                linear-gradient(to bottom, var(--white) 36%, 
+                                            var(--light-grayish-blue) 36%);
     background-repeat: no-repeat;
     background-size: contain;
     background-position-x: center;
@@ -84,7 +83,7 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
-    grid-row-gap: 80px;
+    grid-row-gap: 55px;
 }
 
 /* ------------ SECCIÓN UNO ------------*/
@@ -113,18 +112,56 @@ main {
 /* ------------ SECCIÓN DOS ------------*/
 
 .seccion-dos {
-    text-align: left;
+    
 }
 .seccion-dos__contenido__p {
     color: var(--desaturated-blue);
     margin-bottom: 1.5em;
+    text-align: left;
+}
+.seccion-dos__contenido__enlace {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid green;
+}
+.seccion-dos__contenido__a {
+    display: block;
+    color: var(--moderate-cyan);
+    text-decoration: none;
+    font-size: .7em;
+}
+.seccion-dos__contenido__a::after {
+    /* content: "";
+    display: block;
+    background: url("../images/icon-arrow.svg") no-repeat;
+    background-position: right;
+    width: 150px;
+    height: 20px;
+    overflow: visible;
+    float: right;
+    position: relative;
+    left: -46%;
+    border-bottom: 1px solid var(--moderate-cyan); */
+/*     content: "";
+    display: inline-block;
+    background: url("../images/icon-arrow.svg") no-repeat;
+    background-size: auto;
+    background-position-y: bottom;
+    width: 17px;
+    height: 17px;
+    overflow: visible; */
+
 }
 .seccion-dos__contenido__testimonio {
     width: 80%;
     background-color: var(--white);
     border-radius: 5px;
-    filter: drop-shadow(2px 2px 3px var(--very-dark-blue));
+    filter: drop-shadow(2px 2px 3px var(--light-gray));
     padding: 20px 20px;
+    margin-top: 30px;
 }
 .seccion-dos__contenido__testimonio__p {
     font-size: .6em;
@@ -173,6 +210,7 @@ main {
     background-color: var(--bright-blue);
     color: var(--light-grayish-blue);
     border: 1px solid var(--bright-blue);
+    filter: drop-shadow(2px 2px 2px var(--light-gray));
     font-weight: bold;
 }
 
