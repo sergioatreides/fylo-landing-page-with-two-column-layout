@@ -4,6 +4,7 @@
     --desaturated-blue: hsl(238, 22%, 44%);
     /* Accent */
     --bright-blue: hsl(224, 93%, 58%);
+    --bright-blue-active: hsl(224, 80%, 71%);
     --moderate-cyan: hsl(170, 45%, 43%);
     /* Neutral */
     --white: hsl(0, 0%, 100%);
@@ -51,7 +52,7 @@ h2 {
 /* ------------ CABECERA ------------*/
 
 .cabecera {
-    width: 100vw;
+    /* width: 100vw; */
     /* background-color: var(--white); */
     display: flex;
     flex-direction: row;
@@ -61,7 +62,6 @@ h2 {
 }
 .logo-header {
     height: 1.7em;
-    margin-left: 1.2em;
 }
 nav {
     margin-right: 15px;
@@ -97,7 +97,7 @@ nav {
 /* -------------- MAIN -------------*/
 
 main {
-    width: 100vw;
+    /* width: 100vw; */
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: repeat(3, auto);
@@ -119,6 +119,10 @@ main {
 .seccion-uno__formulario {
     width: 100%;
 }
+.seccion-uno__h1,
+.seccion-uno__p {
+    text-align: center;
+}
 
 /* ------------ SECCIÓN DOS ------------*/
 
@@ -133,35 +137,29 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border: 1px solid green;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.seccion-dos__contenido__enlace img {
+    margin-left: 3px;
 }
 .seccion-dos__contenido__a {
+    position: relative;
     display: block;
     color: var(--moderate-cyan);
     text-decoration: none;
     font-size: .7em;
+    margin-right: 3px;
 }
 .seccion-dos__contenido__a::after {
-    /* content: "";
-    display: block;
-    background: url("../images/icon-arrow.svg") no-repeat;
-    background-position: right;
-    width: 150px;
-    height: 20px;
+    position: absolute;
+    border-bottom: 1px solid var(--moderate-cyan); 
+    content: ""; 
+    width: 120%;
+    height: 50%;
     overflow: visible;
-    float: right;
-    position: relative;
-    left: -46%;
-    border-bottom: 1px solid var(--moderate-cyan); */
-/*     content: "";
-    display: inline-block;
-    background: url("../images/icon-arrow.svg") no-repeat;
-    background-size: auto;
-    background-position-y: bottom;
-    width: 17px;
-    height: 17px;
-    overflow: visible; */
-
+    left: 0px;
+    bottom: -3px;
 }
 .seccion-dos__contenido__testimonio {
     width: 80%;
@@ -170,6 +168,7 @@ main {
     filter: drop-shadow(2px 2px 3px var(--light-gray));
     padding: 20px 20px;
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 .seccion-dos__contenido__testimonio__p {
     font-size: .6em;
@@ -223,7 +222,7 @@ main {
 /* ----------- FOOTER ------------*/
 
 footer {
-    width: 100vw;
+    /* width: 100vw; */
     background-color: var(--very-dark-blue);
     color: var(--white);
 }
@@ -270,6 +269,12 @@ footer {
     margin-left: 0;
     margin-bottom: 20px;
 }
+.pie__menu__izq a:hover,
+.pie__menu__dch a:hover,
+.pie__menu__izq a:active,
+.pie__menu__dch a:active {
+    color: var(--bright-blue);
+}
 .pie__social {
     display: flex;
     flex-direction: row;
@@ -279,10 +284,14 @@ footer {
     font-size: 1.5em;
     margin-left: 10px;
     margin-right: 10px;
-
+}
+.pie__social i:hover,
+.pie__social i:active {
+    color: var(--bright-blue);
 }
 
 /* ------------ CONTROLES ------------*/
+
 .input, 
 .boton {
     width: 95%;
@@ -291,10 +300,15 @@ footer {
     margin-bottom: 1em;
 }
 .boton {
-    border: 0;
     background-color: var(--bright-blue);
     color: var(--light-grayish-blue);
     font-weight: bold;
+    font-size: .7em;
+}
+.boton:hover,
+.boton:active {
+    cursor: pointer;
+    background-color: var(--bright-blue-active);
 }
 #seccion-uno__formulario__i-email {
     border: 1px solid black;
@@ -328,14 +342,27 @@ footer {
 /* ----------------------------    MEDIA QUERIES    ---------------------------*/
 
 @media screen and (min-width: 800px){
+    body {
+        font-family: var(--fuentes-cuerpo);
+        background: url("../images/bg-curve-desktop.svg"), 
+                    linear-gradient(to bottom, var(--white) 34%, 
+                                                var(--light-grayish-blue) 34%);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: center;
+        background-position-y: 31%;
+    }
     h1,
     h2 {
         font-size: 2.1em;
         text-align: left;
     }
+    main {
+        margin-top: 80px;
+        grid-row-gap: 130px;
+    }
     .seccion {
         flex-direction: row-reverse;
-        width: 90%;
         text-align: left;
     }
     .formulario {
@@ -349,13 +376,13 @@ footer {
         margin-right: 45px;
     }
     .cabecera {
-        width: 90%;
+        /* width: 90%; */
         margin-top: 3em;
         margin-bottom: 2.5em;
     }
     .logo-header {
         height: 2.5em;
-        margin-left: 0;
+        margin-left: 6.5em;
     }
     .cabecera__menu li {
         margin-left: 35px; 
@@ -368,11 +395,23 @@ footer {
     }
 
     /* ------------ SECCIÓN UNO ------------*/
-
-   
+    
+    .seccion-uno__h1,
+    .seccion-uno__p {
+        text-align: left;
+    }
+    .seccion-uno {
+        width: 90%;
+    }
+   #seccion-uno__formulario__i-email {
+        width: 65%;
+   }
        
     /* ----------- SECCIÓN DOS ------------*/
 
+    .seccion-dos {
+        width: 90%;
+    }
     .s-contenido-dos {
         width: 55%;
     }
@@ -388,13 +427,76 @@ footer {
    }
    .seccion-dos__contenido__testimonio {
        margin-left: 0;
-       width: 50%;
+       width: 45%;
+   }
+   .seccion-dos__contenido__a {
+       font-size: .8em;
+       margin-left: 0;
    }
 
+   /* ------------ SECCIÓN TRES ------------*/
+
+    .seccion-tres {
+        flex-direction: row;
+        padding: 80px 50px 50px 50px;
+    }
+
+    .seccion-tres__p,
+    .seccion-tres__h2 {
+        color: var(--white);
+        text-align: center;
+    }
+    .seccion-tres__contenido {
+        width: 45%;
+        padding-right: 100px;
+    }
+    .seccion-tres__p, 
+    .seccion-tres__h2 {
+        text-align: left;
+    }
+    .seccion-tres__h2 {
+        margin-bottom: 20px;
+        font-size: 1.8em;
+    }
+    .seccion-tres__formulario {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        height: auto;
+    }
+    #seccion-tres__formulario__i-email {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    /* ----------- FOOTER ------------*/
+
+    .pie__contenedor {
+        width: 88%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        grid-row-gap: 30px;
+        padding-bottom: 40px;
+    }
+    .logo-pie {
+        grid-column: span 3;
+    }
+    .pie__menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        margin-left: 0;
+        grid-column-gap: 100px;
+    }
+    .pie__contacto {
+        grid-row-gap: 15px;
+        align-content: start;
+    }
+
     /* ------------ CONTROLES --------------*/
+
     .input, 
     .boton {
-        width: 65%;
         margin-left: 0;
         margin-right: 0;
 }
