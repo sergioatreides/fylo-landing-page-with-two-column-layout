@@ -63,6 +63,9 @@ h2 {
     height: 1.7em;
     margin-left: 1.2em;
 }
+nav {
+    margin-right: 15px;
+}
 .cabecera__menu {
     display: flex;
     flex-direction: row;
@@ -326,6 +329,33 @@ footer {
 /* ---------- MEDIA QUERIES ----------*/
 
 @media screen and (min-width: 800px){
+
+    .seccion {
+        flex-direction: row-reverse;
+        width: 85%;
+    }
+
+    /* ------------ CABECERA ------------*/
+
+    nav {
+        margin-right: 45px;
+    }
+    .cabecera {
+        margin-top: 2em;
+        margin-bottom: 2.5em;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+    .logo-header {
+        height: 1.7em;
+        margin-left: 1.2em;
+    }
+    .cabecera__menu li {
+        margin-left: 35px; 
+    }
+
+    /* ------------ SECCIÓN UNO ------------*/
+
 
 
 }
