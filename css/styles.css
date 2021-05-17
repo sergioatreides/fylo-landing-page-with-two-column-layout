@@ -9,6 +9,7 @@
     --white: hsl(0, 0%, 100%);
     --light-grayish-blue: #f8f8fe;
     --light-gray: hsl(0, 0%, 75%);
+    --black: hsl(0, 0%, 0%);
     /* Fuentes */
     --fuentes-titulos: 'Raleway', sans-serif;
     --fuentes-cuerpo: 'Open Sans', sans-serif;
@@ -19,9 +20,9 @@
 }
 body {
     font-family: var(--fuentes-cuerpo);
-    background: url("../images/bg-curve-mobile.svg"), 
+    /* background: url("../images/bg-curve-mobile.svg"), 
                 linear-gradient(to bottom, var(--white) 36%, 
-                                            var(--light-grayish-blue) 36%);
+                                            var(--light-grayish-blue) 36%); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position-x: center;
@@ -75,14 +76,23 @@ h2 {
    text-decoration: none;
    color: var(--very-dark-blue);
 }
+.formulario {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.7em;
+    margin-bottom: 1.7em;
+}
+.seccion {
+    height: auto;
+}
 
 /* -------------- MAIN -------------*/
 
 main {
     width: 100vw;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
     grid-row-gap: 55px;
 }
 
@@ -101,11 +111,7 @@ main {
 .seccion-uno__imagen__img {
     width: 100%;
 }
-.formulario {
-    display: flex;
-    flex-direction: column;
-    margin-top: 1.7em;
-    margin-bottom: 1.7em;
+.seccion-uno__formulario {
     width: 100%;
 }
 
@@ -193,32 +199,125 @@ main {
     margin-left: 0;
 }
 
-/* ------------ CONTROLES ------------*/
+/* ------------ SECCIÓN TRES ------------*/
 
-#i-email,
-#b-submit {
+.seccion-tres {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--desaturated-blue);
+    width: 100%;
+    padding: 45px 25px 25px 25px;
+}
+
+.seccion-tres__p,
+.seccion-tres__h2 {
+    color: var(--white);
+    text-align: center;
+}
+.seccion-tres__formulario {
+    width: 80%;
+}
+
+
+/* ------------ CONTROLES ------------*/
+.input, 
+.boton {
     width: 95%;
     padding: 9px 20px;
     border-radius: 3px;
     margin-bottom: 1em;
 }
-#i-email {
-    border: 1px solid black;
-}
-#b-submit {
+.boton {
     border: 0;
     background-color: var(--bright-blue);
     color: var(--light-grayish-blue);
+    font-weight: bold;
+}
+#seccion-uno__formulario__i-email {
+    border: 1px solid black;
+}
+#seccion-uno__formulario__b-submit {
     border: 1px solid var(--bright-blue);
     filter: drop-shadow(2px 2px 2px var(--light-gray));
-    font-weight: bold;
+}
+#seccion-tres__formulario__i-email {
+    border: 0;
+    filter: drop-shadow(0px 0px 1px var(--black));
+}
+#seccion-tres__formulario__b-submit {
+    border: 1px solid var(--bright-blue);
+    filter: drop-shadow(0px 0px 1px var(--black));
+}
+
+/* ----------- FOOTER ------------*/
+footer {
+    width: 100vw;
+    background-color: var(--very-dark-blue);
+    color: var(--white);
+}
+.pie__contenedor {
+    padding-top: 60px;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-row-gap: 70px;
+}
+.logo-pie {
+    filter: invert(1) saturate(100) grayscale(1);
+    margin-left: 0;
+}
+.pie__contacto {
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-template-rows: repeat(2, auto);
+    align-items: center;
+    margin-left: 0;
+    grid-row-gap: 25px;
+    grid-column-gap: 20px;
+}
+.pie__contenedor__contacto__p {
+    margin-left: 0px;
+}
+.pie__menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    margin-left: 0;
+}
+.pie__menu__izq,
+.pie__menu__dch {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+}
+.pie__menu__izq a,
+.pie__menu__dch a {
+    text-decoration: none;
+    color: var(--white);
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+.pie__social {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.pie__social i {
+    font-size: 1.5em;
+    margin-left: 10px;
+    margin-right: 10px;
+
 }
 
 /* ----------- ATRIBUCIÓN ------------*/
 
 .attribution { 
+    padding: 20px 0;
+    background-color: var(--very-dark-blue);
     font-size: 11px; 
     text-align: center; 
+    color: var(--white);
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 

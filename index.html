@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/styles.css">
   <title>Frontend Mentor | Fylo landing page with two column layout</title>
+  <script src="https://kit.fontawesome.com/0c29b597aa.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -41,9 +42,9 @@
 
         <p class="parrafo">Fylo stores your most important files in one secure location. Access them wherever you need, share and collaborate with friends, family, and co-workers.</p>
       
-        <form class="formulario" method="GET">
-          <input id="i-email" type="email" title="Email" required placeholder="Enter your email...">
-          <button id="b-submit" type="submit" title="Submit">Get Started</button>
+        <form class="formulario seccion-uno__formulario" method="GET">
+          <input id="seccion-uno__formulario__i-email" class="input" type="email" title="Email" required placeholder="Enter your email...">
+          <button id="seccion-uno__formulario__b-submit" class="boton" type="submit" title="Submit">Get Started</button>
         </form>
 
       </div>
@@ -89,14 +90,18 @@
 
     </section>
 
-    <section class="seccion-tres">
+    <section class="seccion seccion-tres">
 
-      Get early access today
+      <header>
+        <h2 class="seccion-tres__h2">Get early access today</h2>
+      </header>
 
-      It only takes a minute to sign up and our free starter tier is extremely generous. 
-      If you have any questions, our support team would be happy to help you.
-    
-      Get Started For Free
+      <p class="parrafo seccion-tres__p">It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
+      
+      <form class="formulario seccion-tres__formulario" method="GET">
+        <input id="seccion-tres__formulario__i-email" class="input" type="email" title="Email" required placeholder="Enter your email...">
+        <button id="seccion-tres__formulario__b-submit" class="boton" type="submit" title="Submit">Get Started For Free</button>
+      </form>
 
     </section>
 
@@ -104,17 +109,38 @@
 
   <footer class="pie">
 
-    Phone: +1-543-123-4567
-    example@fylo.com
-  
-    About Us
-    Jobs
-    Press
-    Blog
-  
-    Contact Us
-    Terms
-    Privacy
+    <div class="pie__contenedor">
+
+      <img class="logo-pie" src="images/logo.svg" alt="Fylo Logo">
+
+      <div class="pie__contacto">
+        <img src="images/icon-phone.svg" alt="Phone">
+        <p class="parrafo pie__contenedor__contacto__p">Phone: +1-543-123-4567</p>
+        <img src="images/icon-email.svg" alt="Email">
+        <p class="parrafo pie__contenedor__contacto__p">example@fylo.com</p>
+      </div>
+
+      <div class="pie__menu">
+        <div class="pie__menu__izq">
+          <a href="#">About Us</a>
+          <a href="#">Jobs</a>
+          <a href="#">Press</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="pie__menu__dch">
+          <a href="#">Contact Us</a>
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+
+      <div class="pie__social">
+        <i class="fab fa-facebook pie__menu__social-ico"></i>
+        <i class="fab fa-twitter pie__menu__social-ico"></i>
+        <i class="fab fa-instagram pie__menu__social-ico"></i>
+      </div>
+
+    </div>
 
   </footer>
 
